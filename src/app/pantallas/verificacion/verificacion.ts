@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-verificacion',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './verificacion.html',
-  styleUrl: './verificacion.css',
+  styleUrl: './verificacion.css'
 })
-export class Verificacion {}
+export class VerificacionComponent {
+  // Aquí después pueden meter lógica para que al escribir en una cajita salte automáticamente a la otra
+}

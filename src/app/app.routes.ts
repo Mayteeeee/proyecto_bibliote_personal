@@ -1,14 +1,22 @@
 import { Routes } from '@angular/router';
 import { Inicio } from './pantallas/inicio/inicio';
-import { Recuperacion } from './pantallas/recuperacion/recuperacion'; 
-// Nota: Aquí importas el Login de tu compañero cuando te lo pase, por ahora pondremos uno provisional:
-import { Component } from '@angular/core';
-
-@Component({ standalone: true, template: '<div class="app-contenedor" style="padding:40px;"><h2>Pantalla de Login (Boceto 2)</h2><p>Aquí irá el código de tu compañero.</p></div>' })
-class LoginProvisionalComponent {}
+import { LoginComponent } from './pantallas/login/login';
+import { Recuperacion } from './pantallas/recuperacion/recuperacion';
+import { VerificacionComponent } from './pantallas/verificacion/verificacion';
 
 export const routes: Routes = [
-  { path: '', component: Inicio }, // Ruta vacía: lo primero que se ve al entrar
-  { path: 'login', component: LoginProvisionalComponent }, // Al darle "Comenzar" vendrá aquí
-  { path: 'recuperar', component: Recuperacion }
+  // Ruta vacía: lo primero que se abrirá en tu navegador será la pantalla de inicio
+  { path: '', component: Inicio }, 
+  
+  // Ruta para ir al Login cuando le des clic a "Comenzar"
+  { path: 'login', component: LoginComponent },
+  
+  // Ruta para la recuperación de contraseña
+  { path: 'recuperacion', component: Recuperacion },
+  
+  // Ruta para la pantalla de verificación
+  { path: 'verificacion', component: VerificacionComponent },
+
+  // Comodín por si escriben cualquier otra ruta rota en el navegador, te manda a inicio
+  { path: '**', redirectTo: '' }
 ];
