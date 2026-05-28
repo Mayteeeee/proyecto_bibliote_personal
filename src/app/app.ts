@@ -1,14 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// Aquí abajo le agregamos el ".component" a la ruta del archivo
+import { LoginComponent } from './pantallas/login/login';
 import { Recuperacion } from './pantallas/recuperacion/recuperacion'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Recuperacion], // Ahora sí, esto funcionará perfecto
+  standalone: true,
+  imports: [RouterOutlet], 
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('mi-biblioteca');
+export class AppComponent {
+  title = 'proyecto_bibliote_personal';
 }

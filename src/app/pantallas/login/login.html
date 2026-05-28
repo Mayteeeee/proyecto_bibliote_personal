@@ -1,1 +1,49 @@
-<p>login works!</p>
+<div class="mobile-container">
+  <div class="header-navigation">
+    <button class="btn-back">&lsaquo;</button>
+  </div>
+
+  <div class="login-content">
+    <div class="logo-container">
+      <span class="book-icon">📖</span>
+    </div>
+
+    <h2>Iniciar sesión</h2>
+
+    <form class="login-form">
+      <div class="input-group">
+        <span class="input-icon">👤</span>
+        <input type="email" placeholder="Correo electrónico" required>
+      </div>
+
+      <div class="input-group">
+       <span class="input-icon">🔒</span>
+  
+       <input 
+       [type]="mostrarPassword ? 'text' : 'password'" 
+       placeholder="Contraseña" 
+       required>
+  
+       <button 
+       type="button" 
+       class="btn-eye" 
+       (click)="togglePassword()">
+       {{ mostrarPassword ? '🙈' : '👁️' }}
+       </button>
+     </div>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox"> Recordarme
+        </label>
+        <a routerLink="/recuperacion" class="forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button type="submit" class="btn-submit">Iniciar sesión</button>
+    </form>
+
+    <p class="register-redirect">
+      ¿No tienes cuenta? <a href="#">Regístrate</a>
+    </p>
+  </div>
+</div>  
