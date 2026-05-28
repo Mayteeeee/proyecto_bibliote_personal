@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-// Aquí abajo le agregamos el ".component" a la ruta del archivo
-import { Recuperacion } from './pantallas/recuperacion/recuperacion'; 
+import { Recuperacion } from './pantallas/recuperacion/recuperacion';
+import { RegistroComponent } from './pantallas/registro/registro';
+import { PanelprincipalComponent } from './pantallas/panelprincipal/panelprincipal'; // <-- 1. Añadimos esta importación
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Recuperacion], // Ahora sí, esto funcionará perfecto
+  standalone: true,
+  imports: [RouterOutlet, Recuperacion, RegistroComponent, PanelprincipalComponent], // <-- 2. Lo agregamos aquí
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
