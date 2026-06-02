@@ -11,7 +11,7 @@ html, body {
 
 /* El contenedor base para todas las pantallas ocupará el 100% real */
 .app-contenedor {
-  width: 100%;
+  width: 100% !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ html, body {
 
 /* Base responsiva para cualquier pantalla del sistema */
 .tarjeta-pantalla {
-  width: 100%;
+  width: 100% !important;
   min-height: 100vh;
   background-color: #ffffff;
   box-sizing: border-box;
@@ -54,17 +54,10 @@ html, body {
   transition: background-color 0.2s, transform 0.1s;
 }
 
-.boton-morado:hover {
-  background-color: #4c1d95;
-}
-
-.boton-morado:active {
-  transform: scale(0.98);
-}
-
-/* Ajuste de Angular para que no bloquee el diseño fluido */
+/* ¡AQUÍ ESTÁ EL TRUCO! Obligamos a la raíz a dejar libre el ancho total */
 app-root {
-  display: block;
-  width: 100%;
-  min-height: 100vh;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100vh !important;
 }
