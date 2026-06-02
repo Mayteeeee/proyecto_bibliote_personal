@@ -3,6 +3,8 @@ import { Inicio } from './pantallas/inicio/inicio';
 import { LoginComponent } from './pantallas/login/login';
 import { Recuperacion } from './pantallas/recuperacion/recuperacion';
 import { VerificacionComponent } from './pantallas/verificacion/verificacion';
+import { Agregareditar } from './pantallas/agregareditar/agregareditar';
+import { Mislibros } from './pantallas/mislibros/mislibros';
 
 export const routes: Routes = [
   // Ruta vacía: lo primero que se abrirá en tu navegador será la pantalla de inicio
@@ -17,6 +19,7 @@ export const routes: Routes = [
   // Ruta para la pantalla de verificación
   { path: 'verificacion', component: VerificacionComponent },
 
-  // Comodín por si escriben cualquier otra ruta rota en el navegador, te manda a inicio
-  { path: '**', redirectTo: '' }
+  { path: 'agregareditar', component: Agregareditar },
+
+  { path: 'mislibros', component: Mislibros}
 ];

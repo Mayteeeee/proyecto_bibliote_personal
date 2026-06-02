@@ -1,0 +1,102 @@
+/* --- COMPORTAMIENTO MÓVIL (Por defecto) --- */
+.inicio-card {
+  justify-content: space-between;
+}
+
+.inicio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titulo-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.menu-hamburguesa {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hero-emojis {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.emoji-planta {
+  font-size: 40px;
+  margin-bottom: -15px;
+  position: relative;
+  z-index: 2;
+}
+
+.emoji-libros {
+  font-size: 100px;
+  filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.06));
+}
+
+.eslogan {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* --- COMPORTAMIENTO PARA LAPTOP / ESCRITORIO --- */
+@media (min-width: 768px) {
+  .inicio-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide la laptop en 2 columnas iguales */
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    padding: 50px;
+    gap: 40px;
+  }
+
+  /* El header ocupa todo el ancho superior */
+  .inicio-header {
+    grid-column: span 2;
+    margin-bottom: 0;
+  }
+
+  /* Los emojis se van al lado izquierdo */
+  .hero-emojis {
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+  
+  .emoji-libros {
+    font-size: 160px; /* Más grandes para que luzcan en laptop */
+  }
+
+  /* El texto y el botón se agrupan en el lado derecho */
+  .inicio-contenido {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Alineado a la izquierda en laptop */
+  }
+
+  .eslogan {
+    text-align: left;
+    font-size: 24px; /* Texto un poco más grande en laptop */
+    max-width: 400px;
+    margin-bottom: 25px;
+  }
+
+  .inicio-acciones {
+    grid-column: 2;
+    width: 100%;
+    max-width: 300px; /* El botón no se estira horrible, mantiene un tamaño limpio */
+  }
+}

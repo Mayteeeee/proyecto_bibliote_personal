@@ -9,7 +9,7 @@ html, body {
   color: #333;
 }
 
-/* El contenedor ahora ocupa el 100% real de cualquier pantalla */
+/* El contenedor base para todas las pantallas ocupará el 100% real */
 .app-contenedor {
   width: 100%;
   min-height: 100vh;
@@ -18,20 +18,18 @@ html, body {
   box-sizing: border-box;
 }
 
-/* La pantalla se adapta por completo sin importar el ancho del dispositivo */
+/* Base responsiva para cualquier pantalla del sistema */
 .tarjeta-pantalla {
   width: 100%;
   min-height: 100vh;
   background-color: #ffffff;
   box-sizing: border-box;
-  padding: 20px;
-  position: relative;
+  padding: 30px;
   display: flex;
   flex-direction: column;
 }
 
-/* --- ESTILOS REUTILIZABLES --- */
-
+/* --- COMPONENTES REUTILIZABLES --- */
 .campo-texto {
   width: 100%;
   padding: 12px;
@@ -46,23 +44,27 @@ html, body {
   width: 100%;
   background-color: #5d24b3;
   color: white;
-  padding: 14px;
+  padding: 15px;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(93, 36, 179, 0.25);
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-/* Obligamos a la etiqueta raíz de Angular a comportarse como un contenedor real */
+.boton-morado:hover {
+  background-color: #4c1d95;
+}
+
+.boton-morado:active {
+  transform: scale(0.98);
+}
+
+/* Ajuste de Angular para que no bloquee el diseño fluido */
 app-root {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  min-height: 100vh !important;
-  background-color: #ffffff !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
 }
