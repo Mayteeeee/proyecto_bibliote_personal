@@ -1,114 +1,142 @@
-/* Contenedor principal gris de fondo para simular entorno móvil */
-.contenedor-movil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f6fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px;
+.tarjeta-pantalla {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Tarjeta blanca simulando la pantalla del teléfono */
-.tarjeta-registro {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 380px; /* Tamaño estándar de pantalla móvil */
-    border-radius: 24px;
-    padding: 30px 24px;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
-    position: relative;
-}
-
-/* Flecha de regreso */
 .btn-regresar {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #333;
-    padding: 0;
-    margin-bottom: 20px;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #333333;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
 }
 
-/* Título principal */
+.btn-regresar:hover {
+  color: #5d24b3;
+}
+
+.btn-regresar i,
+.btn-regresar span {
+  display: none;
+}
+
+.btn-regresar::before {
+  content: "\2039";
+}
+
 h2 {
-    text-align: center;
-    color: #1a1a1a;
-    font-size: 24px;
-    margin-bottom: 30px;
-    font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1.8rem;
+  margin-bottom: 35px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-align: center;
 }
 
-/* Formulario */
 .formulario {
-    display: flex;
-    flex-direction: column;
-  gap: 16px; /* Espaciado entre inputs */
+  width: 100%;
 }
 
-/* Cajas de inputs con iconos */
 .grupo-input {
-    display: flex;
-    align-items: center;
-    border: 1px solid #dcdde1;
-    border-radius: 12px;
-    padding: 12px 16px;
-    background-color: #ffffff;
-    transition: border-color 0.3s;
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.grupo-input:focus-within {
-    border-color: #6a4eb8; /* Morado al hacer clic */
-}
-
-.grupo-input .icono {
-    margin-right: 12px;
-    font-size: 18px;
-    color: #7f8c8d;
+.icono {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888888;
+  font-size: 1.1rem;
+  pointer-events: none;
 }
 
 .grupo-input input {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 15px;
-    color: #2f3640;
+  width: 100%;
+  padding: 16px 45px 16px 48px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  font-size: 16px;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  outline: none;
+  color: #1a1a1a;
+  transition: border-color 0.3s, background-color 0.3s;
 }
 
-/* Botón Morado de Registrarse */
+.grupo-input input:focus {
+  border-color: #5d24b3;
+  background-color: #ffffff;
+}
+
+.grupo-input input::placeholder {
+  color: #a0a0a0;
+}
+
+.btn-eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  color: #888888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-eye:focus {
+  outline: none;
+}
+
 .btn-registrarse {
-    background-color: #6a4eb8; /* Morado idéntico al de tu compañera */
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 14px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.2s;
+  width: 100%;
+  padding: 16px;
+  background-color: #5d24b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(93, 36, 179, 0.25);
+  transition: background-color 0.3s, transform 0.1s;
+  margin-top: 15px;
 }
 
 .btn-registrarse:hover {
-    background-color: #533fa0;
+  background-color: #4a1c91;
 }
 
-/* Texto inferior */
+.btn-registrarse:active {
+  transform: scale(0.98);
+}
+
 .login-link {
-    text-align: center;
-    margin-top: 24px;
-    font-size: 14px;
-    color: #57606f;
+  margin-top: 35px;
+  font-size: 0.9rem;
+  color: #555555;
+  text-align: center;
 }
 
 .login-link a {
-    color: #6a4eb8;
-    text-decoration: none;
-    font-weight: bold;
+  color: #5d24b3;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
 }
 
 .login-link a:hover {
-    text-decoration: underline;
+  color: #4a1c91;
 }

@@ -130,12 +130,13 @@ h2 {
 }
 
 .remember-me {
-  color: #555555;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  user-select: none;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /* Checkbox personalizado */
@@ -158,19 +159,31 @@ h2 {
 .btn-submit {
   width: 100%;
   padding: 16px;
+<<<<<<< Updated upstream
   background-color: #7b61ff; 
+=======
+  background-color: #5d24b3; /* El morado de tu diseño */
+>>>>>>> Stashed changes
   color: #ffffff;
   border: none;
   border-radius: 14px;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
+<<<<<<< Updated upstream
   box-shadow: 0 4px 12px rgba(123, 97, 255, 0.25); 
+=======
+  box-shadow: 0 4px 12px rgba(93, 36, 179, 0.25); /* Sombra estética */
+>>>>>>> Stashed changes
   transition: background-color 0.3s, transform 0.1s;
 }
 
 .btn-submit:hover {
+<<<<<<< Updated upstream
   background-color: #6246ea;
+=======
+  background-color: #4a1c91; /* Un tono de morado más fuerte al pasar el mouse */
+>>>>>>> Stashed changes
 }
 
 .btn-submit:active {
