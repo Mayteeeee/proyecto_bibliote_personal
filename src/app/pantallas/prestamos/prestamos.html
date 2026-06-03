@@ -1,1 +1,99 @@
-<p>prestamos works!</p>
+<div class="tarjeta-pantalla">
+
+  <h1 class="titulo-seccion">Préstamos</h1>
+
+  <div class="contenedor-tabs">
+    <button 
+      class="tab-btn" 
+      [class.activo]="pestanaActiva === 'activos'" 
+      (click)="cambiarPestana('activos')"
+    >Activos</button>
+    
+    <button 
+      class="tab-btn" 
+      [class.activo]="pestanaActiva === 'historial'" 
+      (click)="cambiarPestana('historial')"
+    >Historial</button>
+  </div>
+
+  <div class="lista-libros" *ngIf="pestanaActiva === 'activos'">
+    
+    <div class="tarjeta-libro">
+      <div class="caratula-libro portada-verde"></div>
+      <div class="info-libro">
+        <h3 class="titulo-libro">1984</h3>
+        <p class="detalle-prestamo">Prestado a: <span>Maria Lopez</span></p>
+        <p class="fecha-prestamo">10/05/2024</p>
+      </div>
+      <span class="etiqueta-estado pendiente">Pendiente</span>
+    </div>
+
+    <div class="tarjeta-libro">
+      <div class="caratula-libro portada-morada"></div>
+      <div class="info-libro">
+        <h3 class="titulo-libro">El principito</h3>
+        <p class="detalle-prestamo">Prestado a: <span>Juan Lopez</span></p>
+        <p class="fecha-prestamo">01/04/2024</p>
+      </div>
+      <span class="etiqueta-estado devuelto">Devuelto</span>
+    </div>
+
+    <div class="tarjeta-libro">
+      <div class="caratula-libro portada-azul"></div>
+      <div class="info-libro">
+        <h3 class="titulo-libro">Misery</h3>
+        <p class="detalle-prestamo">Prestado a: <span>Ana Torres</span></p>
+        <p class="fecha-prestamo">15/03/2024</p>
+      </div>
+      <span class="etiqueta-estado devuelto">Devuelto</span>
+    </div>
+  </div>
+
+  <div class="lista-libros" *ngIf="pestanaActiva === 'historial'">
+    
+    <div class="tarjeta-libro">
+      <div class="caratula-libro portada-azul"></div> <div class="info-libro">
+        <h3 class="titulo-libro">Cien Años de Soledad</h3>
+        <p class="detalle-prestamo">Devuelto el: <span>12/03/2024</span></p>
+        <p class="fecha-prestamo">Ana Torres</p>
+      </div>
+      <span class="etiqueta-estado devuelto">Entregado</span>
+    </div>
+
+    <div class="tarjeta-libro">
+      <div class="caratula-libro portada-verde"></div>
+      <div class="info-libro">
+        <h3 class="titulo-libro">Fahrenheit 451</h3>
+        <p class="detalle-prestamo">Devuelto el: <span>20/02/2024</span></p>
+        <p class="fecha-prestamo">Juan Lopez</p>
+      </div>
+      <span class="etiqueta-estado devuelto">Entregado</span>
+    </div>
+
+    <div class="tarjeta-libro">
+      <div class="caratula-libro portada-morada"></div>
+      <div class="info-libro">
+        <h3 class="titulo-libro">Brave New World</h3>
+        <p class="detalle-prestamo">Devuelto el: <span>05/02/2024</span></p>
+        <p class="fecha-prestamo">Maria Lopez</p>
+      </div>
+      <span class="etiqueta-estado devuelto">Entregado</span>
+    </div>
+  </div>
+
+  <button class="btn-flotante-agregar" (click)="abrirAgregarPrestamo()">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+  </button>
+
+  <nav class="navbar-inferior">
+    <button class="nav-item" (click)="irA('inicio')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Inicio</span></button>
+    <button class="nav-item" (click)="irA('mis-libros')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path></svg><span>libros</span></button>
+    <div class="nav-item-central-vacio"></div>
+    <button class="nav-item activo" (click)="irA('prestamos')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg><span>prestamo</span></button>
+    <button class="nav-item" (click)="irA('perfil')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"></circle></svg><span>perfil</span></button>
+  </nav>
+
+</div>
