@@ -1,7 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from './pantallas/login/login';
-import { Recuperacion } from './pantallas/recuperacion/recuperacion'; 
 
 @Component({
   selector: 'app-root',
@@ -10,6 +8,6 @@ import { Recuperacion } from './pantallas/recuperacion/recuperacion';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class AppComponent {
-  title = 'proyecto_bibliote_personal';
+export class App {
+  protected readonly title = signal('mi-biblioteca');
 }

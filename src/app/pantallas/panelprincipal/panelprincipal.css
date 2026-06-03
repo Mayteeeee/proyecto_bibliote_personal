@@ -1,0 +1,216 @@
+.contenedor-movil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f6fa;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px;
+}
+
+.pantalla-dashboard {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 380px;
+    min-height: 650px;
+    border-radius: 24px;
+    padding: 20px 20px 80px 20px; /* Margen extra abajo para que no lo tape el menú */
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header-dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.header-dashboard h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.btn-menu, .btn-notificacion {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.subtitulo {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+/* Grid de Estadísticas */
+.grid-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 15fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tarjeta-est {
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 10px 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.titulo-est {
+    font-size: 11px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.numero-est {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+/* Sección Lecturas */
+.encabezado-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.encabezado-seccion h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.link-ver-todos {
+    font-size: 13px;
+    color: #6a4eb8;
+    text-decoration: none;
+}
+
+.lista-libros {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tarjetas de Libros */
+.tarjeta-libro {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e8ed;
+    border-radius: 14px;
+    padding: 10px;
+    gap: 12px;
+}
+
+.portada-dummy {
+    width: 40px;
+    height: 55px;
+    background-color: #cbd5e1;
+    border-radius: 6px;
+}
+
+.info-libro {
+    flex-grow: 1;
+}
+
+.info-libro h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.estrellas {
+    color: #f1c40f;
+    font-size: 12px;
+}
+
+/* Etiquetas */
+.etiqueta {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.etiqueta.leido {
+    background-color: #e8f8f0;
+    color: #2ecc71;
+}
+
+.etiqueta.por-leer {
+    background-color: #fef9e7;
+    color: #f1c40f;
+}
+
+/* Menú de Navegación Inferior Fijo */
+.nav-inferior {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: #ffffff;
+    border-top: 1px solid #e1e8ed;
+    border-radius: 0 0 24px 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: #95a5a6;
+    gap: 2px;
+}
+
+.nav-item.activo {
+    color: #6a4eb8; /* Color morado activo */
+}
+
+.nav-icono {
+    font-size: 18px;
+}
+
+.nav-texto {
+    font-size: 10px;
+}
+
+/* Botón central redondo (+) */
+.btn-mas {
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
+}
+
+.nav-icono-mas {
+    font-size: 22px;
+    color: #2c3e50;
+    font-weight: 300;
+}

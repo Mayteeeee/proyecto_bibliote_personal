@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-panelprincipal',
+  standalone: true,
   imports: [],
   templateUrl: './panelprincipal.html',
-  styleUrl: './panelprincipal.css',
+  styleUrl: './panelprincipal.css'
 })
-export class Panelprincipal {}
+export class PanelprincipalComponent { }

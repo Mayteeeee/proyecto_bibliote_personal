@@ -1,0 +1,127 @@
+/* --- ESTILOS MÓVIL (Por defecto: se mantiene igual) --- */
+.inicio-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%; /* Forzamos a que use todo el ancho disponible */
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.inicio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titulo-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.menu-hamburguesa {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hero-emojis {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.emoji-planta {
+  font-size: 40px;
+  margin-bottom: -15px;
+  position: relative;
+  z-index: 2;
+}
+
+.emoji-libros {
+  font-size: 100px;
+  filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.06));
+}
+
+.inicio-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.eslogan {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 280px;
+}
+
+.inicio-acciones {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+/* --- ESTILOS LAPTOP / ESCRITORIO (¡Aquí corregimos el tamaño!) --- */
+@media (min-width: 768px) {
+  .inicio-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas que ocupan la mitad de la pantalla cada una */
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    width: 100%; /* Obliga a la sección a expandirse por completo en la laptop */
+    min-height: 100vh;
+    padding: 50px 80px; /* Más espacio hacia los lados */
+    box-sizing: border-box;
+    gap: 20px;
+  }
+
+  .inicio-header {
+    grid-column: span 2; /* El encabezado se estira de izquierda a derecha */
+    margin-bottom: 50px;
+  }
+
+  .hero-emojis {
+    grid-column: 1; /* Los libros se plantan en la columna izquierda */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .emoji-libros {
+    font-size: 160px; /* Un tamaño más grande e imponente para laptops */
+  }
+  
+  .emoji-planta {
+    font-size: 55px;
+    margin-bottom: -25px;
+  }
+
+  .inicio-contenido {
+    grid-column: 2; /* El bloque de texto y botón se van a la derecha */
+    align-items: flex-start; /* Alinea el texto a la izquierda dentro de su espacio */
+    padding-left: 60px; /* Separación elegante respecto a los libros */
+  }
+
+  .eslogan {
+    text-align: left;
+    font-size: 28px; /* Letra más grande y legible en monitor */
+    max-width: 450px; /* Evita que el texto de un salto de línea feo */
+    margin-bottom: 40px;
+  }
+
+  .inicio-acciones {
+    max-width: 320px; /* El botón mantiene un tamaño estético sin estirarse al infinito */
+  }
+}

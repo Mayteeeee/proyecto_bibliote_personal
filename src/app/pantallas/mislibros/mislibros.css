@@ -1,0 +1,250 @@
+/* --- COMPORTAMIENTO MÓVIL (Por defecto) --- */
+.libros-wrapper {
+  background-color: #ffffff;
+}
+
+.libros-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+/* Modificamos esta sección para asegurar que use el 100% */
+.seccion-principal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.libros-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.titulo-pantalla {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.btn-menu, .btn-notificaciones {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Buscador: Aseguramos que ocupe todo el ancho disponible */
+.busqueda-contenedor {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%; /* Forzar expansión horizontal */
+}
+
+.input-buscar-wrapper {
+  position: relative;
+  flex: 1; /* Esto hace que el input crezca todo lo posible */
+}
+
+.icono-buscar {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-busqueda {
+  width: 100%;
+  padding: 10px 10px 10px 38px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.btn-filtro-tiempo {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Fila de Categorías: Ahora crecerán de forma equitativa en pantallas grandes */
+.categorias-scroll {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  width: 100%; /* Forzar expansión horizontal */
+}
+
+.chip {
+  background-color: #f3f0f7;
+  color: #666;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.chip.active {
+  background-color: #5d24b3;
+  color: white;
+  font-weight: bold;
+}
+
+/* Estado Vacío */
+.estado-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.emoji-vacio {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+.texto-vacio-principal {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.texto-vacio-secundario {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  color: #999;
+}
+
+/* Botón flotante */
+.btn-agregar-flotante {
+  position: absolute;
+  bottom: 85px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  background-color: #5d24b3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(93, 36, 179, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* Navbar Inferior */
+.navbar-inferior {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  background-color: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9;
+  padding: 0 10px;
+}
+
+.nav-item {
+  text-align: center;
+  cursor: pointer;
+  color: #888;
+}
+
+.nav-item.active {
+  color: #5d24b3;
+  font-weight: bold;
+}
+
+.nav-icono {
+  font-size: 18px;
+}
+
+.nav-texto {
+  font-size: 10px;
+  display: block;
+  margin-top: 2px;
+}
+
+
+/* --- COMPORTAMIENTO LAPTOP / PANTALLAS GRANDES --- */
+@media (min-width: 768px) {
+  .libros-content {
+    padding: 40px 80px 100px 80px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ¡AQUÍ ESTÁ EL CAMBIO ESENCIAL! El buscador ahora abarca el 100% de la laptop */
+  .busqueda-contenedor {
+    max-width: 100%; 
+    margin-bottom: 30px;
+  }
+
+  /* Los chips se distribuyen elegantemente a lo largo de la pantalla */
+  .categorias-scroll {
+    display: flex;
+    justify-content: flex-start; /* Se alinean al inicio pero con ancho completo */
+    gap: 15px; /* Más separación en laptop */
+  }
+
+  .chip {
+    padding: 10px 24px; /* Un poco más grandes para que luzcan en monitor */
+    font-size: 14px;
+  }
+
+  .titulo-pantalla {
+    font-size: 26px;
+  }
+
+  .estado-vacio {
+    min-height: 380px;
+  }
+
+  .emoji-vacio {
+    font-size: 65px;
+  }
+
+  .texto-vacio-principal {
+    font-size: 20px;
+  }
+
+  .btn-agregar-flotante {
+    bottom: 95px;
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+}
