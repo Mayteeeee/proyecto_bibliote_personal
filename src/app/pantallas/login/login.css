@@ -31,19 +31,15 @@
   color: #7b61ff;
 }
 
-/* ==========================================================================
-   3. SECCIÓN CENTRAL (LOGO, TÍTULO Y FORMULARIO)
-   ========================================================================== */
 .login-content {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  justify-content: center; /* Centra verticalmente los elementos en el cel */
+  justify-content: center;
 }
 
-/* Icono del libro de la biblioteca */
 .logo-container {
   font-size: 3.5rem;
   margin-bottom: 15px;
@@ -61,15 +57,11 @@ h2 {
   width: 100%;
 }
 
-/* ==========================================================================
-   4. CAMPOS DE ENTRADA DE TEXTO (INPUTS)
-   ========================================================================== */
 .input-group {
   position: relative;
   margin-bottom: 20px;
 }
 
-/* Iconos de la izquierda (Usuario y Candado) */
 .input-icon {
   position: absolute;
   left: 15px;
@@ -77,42 +69,37 @@ h2 {
   transform: translateY(-50%);
   color: #888888;
   font-size: 1.1rem;
-  pointer-events: none; /* Evita que interfiera al hacer clic */
+  pointer-events: none; 
 }
 
-/* Estilo base para ambos inputs */
 .input-group input {
   width: 100%;
-  padding: 16px 15px 16px 48px; /* Espacio extra a la izquierda para el icono */
+  padding: 16px 15px 16px 48px; 
   border: 1px solid #dcdcdc;
   border-radius: 14px;
   font-size: 1rem;
   background-color: #fafafa;
   box-sizing: border-box;
   outline: none;
-  color: #1a1a1a; /* Letra clara y visible cuando el usuario escribe */
-  transition: border-color 0.3s, background-color 0.3s;
+  color: #1a1a1a; 
+  transition: 
 }
 
-/* Cuando el usuario se posiciona sobre el cuadro para escribir */
+
 .input-group input:focus {
-  border-color: #7b61ff; /* Cambia al morado de tu marca */
+  border-color: #7b61ff; 
   background-color: #ffffff;
 }
 
-/* Color del texto de sugerencia de fondo (Placeholder) */
 .input-group input::placeholder {
   color: #a0a0a0;
 }
 
-/* Margen especial a la derecha exclusivo para el campo de contraseña */
+
 .input-group input[placeholder="Contraseña"] {
-  padding-right: 45px; /* Evita que el texto largo se encime con el ojo */
+  padding-right: 45px; 
 }
 
-/* ==========================================================================
-   5. BOTÓN DEL OJITO (VER / OCULTAR CONTRASEÑA)
-   ========================================================================== */
 .btn-eye {
   position: absolute;
   right: 15px;
@@ -133,9 +120,6 @@ h2 {
   outline: none;
 }
 
-/* ==========================================================================
-   6. OPCIONES EXTRAS (RECORDARME Y ¿OLVIDASTE TU CONTRASEÑA?)
-   ========================================================================== */
 .form-options {
   display: flex;
   justify-content: space-between;
@@ -156,7 +140,7 @@ h2 {
 
 /* Checkbox personalizado */
 .remember-me input[type="checkbox"] {
-  accent-color: #7b61ff; /* Hace que el cuadrito de check sea morado */
+  accent-color: #7b61ff; 
   cursor: pointer;
 }
 
@@ -171,34 +155,28 @@ h2 {
   color: #6246ea;
 }
 
-/* ==========================================================================
-   7. BOTÓN PRINCIPAL DE INICIAR SESIÓN
-   ========================================================================== */
 .btn-submit {
   width: 100%;
   padding: 16px;
-  background-color: #7b61ff; /* El morado de tu diseño */
+  background-color: #7b61ff; 
   color: #ffffff;
   border: none;
   border-radius: 14px;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(123, 97, 255, 0.25); /* Sombra estética */
+  box-shadow: 0 4px 12px rgba(123, 97, 255, 0.25); 
   transition: background-color 0.3s, transform 0.1s;
 }
 
 .btn-submit:hover {
-  background-color: #6246ea; /* Un tono de morado más fuerte al pasar el mouse */
+  background-color: #6246ea;
 }
 
 .btn-submit:active {
-  transform: scale(0.98); /* Pequeño efecto de hundido al presionarlo */
+  transform: scale(0.98); 
 }
 
-/* ==========================================================================
-   8. ENLACE INFERIOR (REDIRECCIÓN A REGISTRO)
-   ========================================================================== */
 .register-redirect {
   margin-top: 35px;
   font-size: 0.9rem;

@@ -1,1 +1,72 @@
-<p>detalleslibro works!</p>
+<div class="mobile-container">
+  
+  <header class="header-navigation">
+    <button class="btn-back" routerLink="/mis-libros">&lsaquo;</button>
+    </header>
+
+  <div>
+    
+    <div class="book-main-info">
+      <div class="book-cover-placeholder">
+        <span class="cover-icon">📕</span>
+      </div>
+      
+      <h2 class="book-title">{{ libro.titulo }}</h2>
+      <p class="book-author">{{ libro.autor }}</p>
+      
+      <div class="book-rating-container">
+        <p class="rating-instruction">Toca una estrella para puntuar:</p>
+        <div class="book-rating">
+          <span class="stars">
+            <span *ngFor="let estrella of maxEstrellas" 
+                  [class.estrella-activa]="estrella <= libro.calificacion" 
+                  class="star-icon"
+                  (click)="puntuarLibro(estrella)">
+              ★
+            </span>
+          </span>
+          <span class="rating-number">({{ libro.calificacion | number:'1.1-1' }})</span>
+        </div>
+      </div>
+
+      <div class="status-badge-container">
+        <span class="status-badge">{{ libro.estado }}</span>
+      </div>
+    </div>
+
+    <nav class="tabs-container">
+      <button class="tab-btn" [class.active]="pestanaActiva === 'informacion'" (click)="cambiarPestana('informacion')">Información</button>
+      <button class="tab-btn" [class.active]="pestanaActiva === 'resena'" (click)="cambiarPestana('resena')">Reseñas</button>
+      <button class="tab-btn" [class.active]="pestanaActiva === 'prestamos'" (click)="cambiarPestana('prestamos')">Préstamos</button>
+    </nav>
+
+    <div class="tab-content-area">
+      
+      <div *ngIf="pestanaActiva === 'informacion'" class="empty-tab-panel">
+        <div class="no-info-card yellow-card">
+          <span class="alert-icon">⚠️</span>
+          <h4>Sin Detalles Técnicos</h4>
+          <p class="placeholder-text">No hay información técnica disponible (páginas, editorial o año) debido a que no se han cargado datos desde el servidor.</p>
+        </div>
+      </div>
+
+      <div *ngIf="pestanaActiva === 'resena'" class="empty-tab-panel">
+        <div class="no-info-card blue-card">
+          <span class="alert-icon">📝</span>
+          <h4>Sin Reseña</h4>
+          <p class="placeholder-text">La sinopsis y los comentarios de los usuarios aparecerán en este apartado una vez que se conecte la base de datos del sistema.</p>
+        </div>
+      </div>
+
+     <div *ngIf="pestanaActiva === 'prestamos'" class="empty-tab-panel">
+        <div class="no-info-card gray-card">
+          <span class="alert-icon">📊</span>
+          <h4>Sin Historial de Préstamos</h4>
+          <p class="placeholder-text">No se puede verificar el estado ni el historial de préstamos debido a que no se han cargado datos desde el servidor.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
