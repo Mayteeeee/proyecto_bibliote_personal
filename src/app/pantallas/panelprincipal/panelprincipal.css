@@ -1,25 +1,10 @@
-.contenedor-movil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f6fa;
-    font-family: 'Segoe UI', sans-serif;
-    padding: 10px;
-}
-
 .pantalla-dashboard {
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 380px;
-    min-height: 650px;
-    border-radius: 24px;
-    padding: 20px 20px 80px 20px; /* Margen extra abajo para que no lo tape el menú */
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
+    padding: 20px 20px 85px 20px; /* Le damos espacio extra abajo para que las lecturas no se metan debajo del menú */
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 80vh; /* Obliga a la tarjeta a tener un buen alto en pantallas grandes */
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -53,7 +38,7 @@
 /* Grid de Estadísticas */
 .grid-estadisticas {
     display: grid;
-    grid-template-columns: repeat(4, 15fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-bottom: 25px;
 }
@@ -77,6 +62,15 @@
 .numero-est {
     font-size: 20px;
     font-weight: bold;
+}
+
+/* Clases específicas para inyectar las variables de color sin Inline Styles */
+.tarjeta-est.leidos { --color-texto: #2ecc71; }
+.tarjeta-est.por-leer { --color-texto: #f1c40f; }
+.tarjeta-est.favoritos { --color-texto: #e74c3c; }
+.tarjeta-est.prestados { --color-texto: #3498db; }
+
+.numero-est {
     color: var(--color-texto);
 }
 
@@ -96,7 +90,7 @@
 
 .link-ver-todos {
     font-size: 13px;
-    color: #6a4eb8;
+    color: #5d24b3;
     text-decoration: none;
 }
 
@@ -165,7 +159,8 @@
     height: 65px;
     background-color: #ffffff;
     border-top: 1px solid #e1e8ed;
-    border-radius: 0 0 24px 24px;
+    /* Importante: Hereda exactamente el redondeado de 16px que tiene .tarjeta-pantalla en app.css */
+    border-radius: 0 0 16px 16px; 
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -185,7 +180,7 @@
 }
 
 .nav-item.activo {
-    color: #6a4eb8; /* Color morado activo */
+    color: #5d24b3; /* Usando tu color morado unificado */
 }
 
 .nav-icono {
