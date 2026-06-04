@@ -1,1 +1,62 @@
-<p>prestamos works!</p>
+<div class="app-contenedor">
+    <div class="tarjeta-pantalla pantalla-prestamo">
+        
+        <header class="header-prestamo">
+            <a routerLink="/panelprincipal" class="btn-regresar" title="Volver al panel">❮</a>
+            <h1>Registrar préstamo</h1>
+            <div class="espacio-vacio"></div>
+        </header>
+
+        <div class="tarjeta-libro-seleccionado">
+            <div class="portada-prestamo"></div>
+            <div class="info-libro-prestamo">
+                <h2>El principito</h2>
+                <p>Antoine de Saint-Exupéry</p>
+            </div>
+        </div>
+
+        <form class="formulario-prestamo" (submit)="guardarPrestamo($event)">
+            
+            <div class="grupo-input">
+                <label for="nombre">Persona a quien se presta</label>
+                <div class="input-icono">
+                    <span class="icono">👤</span>
+                    <input type="text" id="nombre" placeholder="Nombre completo" required>
+                </div>
+            </div>
+
+            <div class="grupo-input">
+                <label for="correo">Correo electrónico <span class="opcional">(opcional)</span></label>
+                <div class="input-icono">
+                    <span class="icono">✉</span>
+                    <input type="email" id="correo" placeholder="correo@ejemplo.com">
+                </div>
+            </div>
+
+            <div class="fila-fechas">
+                <div class="grupo-input">
+                    <label for="fecha-prestamo">Fecha de préstamo</label>
+                    <div class="input-icono">
+                        <span class="icono">📅</span>
+                        <input type="date" id="fecha-prestamo" required>
+                    </div>
+                </div>
+                <div class="grupo-input">
+                    <label for="fecha-devolucion">Fecha de devolución</label>
+                    <div class="input-icono">
+                        <span class="icono">📅</span>
+                        <input type="date" id="fecha-devolucion" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grupo-input">
+                <label for="notas">Notas <span class="opcional">(opcional)</span></label>
+                <textarea id="notas" rows="3" placeholder="Ej. Indicaciones, comentarios, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn-guardar">Guardar préstamo</button>
+        </form>
+
+    </div>
+</div>

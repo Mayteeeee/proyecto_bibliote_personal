@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Inicio } from './pantallas/inicio/inicio';
 import { RegistroComponent } from './pantallas/registro/registro';
 import { PanelprincipalComponent } from './pantallas/panelprincipal/panelprincipal';
+import { PrestamosComponent } from './pantallas/prestamos/prestamos';
 import { LoginComponent } from './pantallas/login/login';
 import { Recuperacion } from './pantallas/recuperacion/recuperacion';
 // 👇 IMPORTACIÓN EXACTA CON TUS NOMBRES DE ARCHIVO
@@ -20,6 +21,8 @@ export const routes: Routes = [
   { path: 'registro', component: RegistroComponent},
 
   { path: 'panelprincipal', component: PanelprincipalComponent },
+
+  { path: 'prestamos', component: PrestamosComponent},
   
   // Ruta para la recuperación de contraseña
   { path: 'recuperacion', component: Recuperacion },

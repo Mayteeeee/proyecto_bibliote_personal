@@ -209,3 +209,44 @@
     color: #2c3e50;
     font-weight: 300;
 }
+
+/* Forzamos a que el componente use el 100% de la pantalla sin importar lo que diga el app.css global */
+:host {
+    display: block;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #ffffff; /* Pintamos el fondo de blanco absoluto para tapar el gris */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99; /* Asegura que se monte encima del body gris */
+}
+
+/* Modificamos el contenedor en esta pantalla para que se estire por completo */
+.app-contenedor {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    min-height: 100vh;
+}
+
+/* Hacemos que la tarjeta ocupe todo el monitor, quitándole bordes y sombras innecesarias en PC */
+.pantalla-dashboard {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    border-radius: 0 !important; /* Eliminamos las esquinas redondeadas para que toque los bordes del monitor */
+    box-shadow: none !important;
+    padding: 20px 20px 90px 20px; /* Buen colchón abajo para el menú fijo */
+    box-sizing: border-box;
+}
+
+/* Corregimos el menú de abajo para que se ancle firmemente al fondo plano del monitor */
+.nav-inferior {
+    position: fixed; /* Se queda pegado abajo pase lo que pase aunque hagas scroll */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 !important; /* Bordes rectos para acoplarse a la pantalla completa */
+    z-index: 100;
+}
