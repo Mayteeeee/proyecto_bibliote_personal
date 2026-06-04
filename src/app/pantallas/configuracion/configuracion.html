@@ -1,1 +1,71 @@
-<p>configuracion works!</p>
+<div class="tarjeta-pantalla">
+
+  <h1 class="titulo-seccion">Configuración</h1>
+
+  <div class="contenedor-tabs-config">
+    <button class="tab-config-btn" [class.activo]="pestanaActiva === 'perfil'" (click)="cambiarPestana('perfil')">Perfil</button>
+    <button class="tab-config-btn" [class.activo]="pestanaActiva === 'preferencias'" (click)="cambiarPestana('preferencias')">Prefe..</button>
+    <button class="tab-config-btn" [class.activo]="pestanaActiva === 'seguridad'" (click)="cambiarPestana('seguridad')">Seguridad</button>
+  </div>
+
+  <div *ngIf="pestanaActiva === 'perfil'">
+    <div class="bloque-perfil-superior">
+      <div class="zona-foto-avatar">
+        <div class="circulo-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#666666" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <button type="button" class="btn-cambiar-foto">cambiar foto</button>
+      </div>
+      <div class="zona-inputs-cortos">
+        <div class="grupo-campo">
+          <label class="etiqueta-label">Nombre</label>
+          <input type="text" class="campo-texto-local" value="usuario">
+        </div>
+        <div class="grupo-campo">
+          <label class="etiqueta-label">Correo</label>
+          <input type="email" class="campo-texto-local" value="bugritos@gmail.com">
+        </div>
+      </div>
+    </div>
+    <div class="grupo-campo ancho-completo">
+      <label class="etiqueta-label">Biografía</label>
+      <textarea class="area-texto-local" placeholder="Escribe algo sobre ti..."></textarea>
+    </div>
+  </div>
+
+  <div *ngIf="pestanaActiva === 'preferencias'">
+    <div class="grupo-campo ancho-completo">
+      <label class="etiqueta-label">Idioma de la aplicación</label>
+      <input type="text" class="campo-texto-local" value="Español (México)">
+    </div>
+    <div class="grupo-campo ancho-completo">
+      <label class="etiqueta-label">Modo Visual</label>
+      <p style="font-size: 14px; color: #666;">[ ] Activar Modo Oscuro (Próximamente)</p>
+    </div>
+  </div>
+
+  <div *ngIf="pestanaActiva === 'seguridad'">
+    <div class="grupo-campo ancho-completo">
+      <label class="etiqueta-label">Contraseña Actual</label>
+      <input type="password" class="campo-texto-local" placeholder="********">
+    </div>
+    <button type="button" class="boton-morado" style="margin-bottom: 15px;" (click)="irA('nueva-contra')">
+      Cambiar Contraseña
+    </button>
+  </div>
+
+  <div class="contenedor-accion-guardar">
+    <button type="button" class="boton-morado" (click)="guardarCambios()">
+      Guardar cambios
+    </button>
+  </div>
+
+  <nav class="navbar-inferior">
+    <button class="nav-item" (click)="irA('inicio')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Inicio</span></button>
+    <button class="nav-item" (click)="irA('mis-libros')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path></svg><span>libros</span></button>
+    <div class="nav-item-central-vacio"></div>
+    <button class="nav-item" (click)="irA('prestamos')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg><span>prestamo</span></button>
+    <button class="nav-item activo" (click)="irA('perfil')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"></circle></svg><span>perfil</span></button>
+  </nav>
+
+</div>

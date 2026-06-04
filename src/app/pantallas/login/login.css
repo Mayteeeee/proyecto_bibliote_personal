@@ -82,7 +82,7 @@ h2 {
   box-sizing: border-box;
   outline: none;
   color: #1a1a1a; 
-  transition: 
+  transition: all 0.3s ease;
 }
 
 
