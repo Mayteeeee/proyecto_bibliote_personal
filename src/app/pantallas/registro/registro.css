@@ -1,3 +1,12 @@
+:host {
+    display: block;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.app-contenedor {
+    padding-top: 0 !important; /* Elimina el espacio que deja ver el fondo gris arriba */
+}
 .tarjeta-pantalla {
   display: flex;
   flex-direction: column;
@@ -139,4 +148,17 @@ h2 {
 
 .login-link a:hover {
   color: #4a1c91;
+}
+
+.app-contenedor {
+    min-height: 100vh;
+    box-sizing: border-box; /* ¡Esta es la magia! Evita que el padding sume tamaño extra */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra la tarjeta perfectamente de arriba a abajo */
+    align-items: center;
+}
+
+.tarjeta-pantalla {
+    margin-top: 0 !important; /* Quita cualquier margen viejo que la empuje hacia abajo */
 }

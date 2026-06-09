@@ -125,7 +125,6 @@
   color: #059669;
 }
 
-/* Barra inferior fija responsiva */
 .navbar-inferior {
   position: fixed;
   bottom: 0;
@@ -142,7 +141,6 @@
   z-index: 100;
 }
 
-/* Si estás en PC/Laptop simula el contenedor móvil perfectamente */
 @media (min-width: 768px) {
   .navbar-inferior {
     position: absolute;

@@ -8,4 +8,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './panelprincipal.html',
   styleUrl: './panelprincipal.css'
 })
-export class PanelprincipalComponent { }
+export class PanelprincipalComponent {
+  // Aquí puedes dejar cualquier método o variable que ya tuviera tu panel original
+}

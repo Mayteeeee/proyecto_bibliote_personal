@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router'; // 1. Importación necesaria para la navegación
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-prestamos',
   standalone: true,
-  imports: [CommonModule, RouterLink], // 2. Se agrega RouterLink aquí
-  templateUrl: './prestamos.html',
-  styleUrls: ['./prestamos.css']
+  imports: [CommonModule, RouterLink],
+  templateUrl: './prestamos.component.html',
+  styleUrls: ['./prestamos.component.css']
 })
 export class PrestamosComponent implements OnInit {
 
