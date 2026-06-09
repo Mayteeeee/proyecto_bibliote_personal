@@ -4,9 +4,10 @@
     <div class="seccion-principal">
       
       <div class="libros-header">
-        <span class="btn-menu">☰</span>
+         <span class="regresar" routerLink="/panelprincipal">
+          ‹
+        </span>
         <h2 class="titulo-pantalla">Mis libros</h2>
-        <span class="btn-notificaciones">🔔</span>
       </div>
 
       <div class="busqueda-contenedor">
@@ -14,7 +15,6 @@
           <span class="icono-buscar">🔍</span>
           <input type="text" placeholder="Buscar libro..." class="input-busqueda">
         </div>
-        <button class="btn-filtro-tiempo">⏳</button>
       </div>
 
       <div class="categorias-scroll">
@@ -25,15 +25,11 @@
       </div>
 
       <div class="estado-vacio">
-        <div class="emoji-vacio" [routerLink]="['/detalleslibro']" style="cursor: pointer;">📚</div>
+        <div class="emoji-vacio" routerLink="/detalleslibro" style="cursor: pointer;">📚</div>
         <p class="texto-vacio-principal">Aún no tienes libros registrados</p>
         <p class="texto-vacio-secundario">Presiona el botón "+" para agregar tu primer libro.</p>
       </div>
     </div>
-
-    <button class="btn-agregar-flotante">
-      +
-    </button>
 
     <div class="navbar-inferior">
       <div class="nav-item">
@@ -45,11 +41,11 @@
         <span class="nav-texto">Mis libros</span>
       </div>
       <div class="nav-item">
-        <div class="nav-icono">➕</div>
+        <div class="nav-icono" routerLink="/agregareditar">➕</div>
         <span class="nav-texto">Agregar</span>
       </div>
       <div class="nav-item">
-        <div class="nav-icono">🔖</div>
+        <div class="nav-icono" routerLink="/prestamos">🔖</div>
         <span class="nav-texto">Préstamos</span>
       </div>
       <div class="nav-item">

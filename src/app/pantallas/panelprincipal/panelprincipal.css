@@ -1,211 +1,158 @@
-.pantalla-dashboard {
-    padding: 20px 20px 85px 20px; /* Le damos espacio extra abajo para que las lecturas no se metan debajo del menú */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 80vh; /* Obliga a la tarjeta a tener un buen alto en pantallas grandes */
-    box-sizing: border-box;
+/* Estilos generales de las secciones */
+.seccion-panel {
+  margin-bottom: 30px;
 }
 
-/* Header */
-.header-dashboard {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
+.titulo-seccion {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.header-dashboard h1 {
-    font-size: 20px;
-    margin: 0;
-    color: #1a1a1a;
+/* Contenedor de las 3 tarjetas de arriba (Flexbox) */
+.contenedor-resumen {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.btn-menu, .btn-notificacion {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+.tarjeta-resumen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.subtitulo {
-    font-size: 13px;
-    color: #7f8c8d;
-    margin: 0 0 20px 0;
-    text-align: center;
+/* Colores basados en tus dibujos */
+.tarjeta-leido { background-color: #7bc17e; }      /* Verde */
+.tarjeta-por-leer { background-color: #f7a052; }   /* Naranja */
+.tarjeta-prestado { background-color: #4a75bc; }   /* Azul */
+
+.numero-resumen {
+  font-size: 22px;
+  margin-bottom: 4px;
 }
 
-/* Grid de Estadísticas */
-.grid-estadisticas {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-bottom: 25px;
+.etiqueta-resumen {
+  font-size: 12px;
 }
 
-.tarjeta-est {
-    border: 1px solid #e1e8ed;
-    border-radius: 12px;
-    padding: 10px 5px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+/* Lista de Lecturas Recientes */
+.lista-lecturas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 60px; /* Margen para que no tape la barra inferior */
 }
 
-.titulo-est {
-    font-size: 11px;
-    color: #7f8c8d;
-    font-weight: 500;
+.item-libro {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #eee;
 }
 
-.numero-est {
-    font-size: 20px;
-    font-weight: bold;
+.portada-libro {
+  width: 45px;
+  height: 55px;
+  border-radius: 6px;
+  margin-right: 15px;
 }
 
-/* Clases específicas para inyectar las variables de color sin Inline Styles */
-.tarjeta-est.leidos { --color-texto: #2ecc71; }
-.tarjeta-est.por-leer { --color-texto: #f1c40f; }
-.tarjeta-est.favoritos { --color-texto: #e74c3c; }
-.tarjeta-est.prestados { --color-texto: #3498db; }
-
-.numero-est {
-    color: var(--color-texto);
-}
-
-/* Sección Lecturas */
-.encabezado-seccion {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.encabezado-seccion h3 {
-    font-size: 16px;
-    margin: 0;
-    color: #2c3e50;
-}
-
-.link-ver-todos {
-    font-size: 13px;
-    color: #5d24b3;
-    text-decoration: none;
-}
-
-.lista-libros {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* Tarjetas de Libros */
-.tarjeta-libro {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e1e8ed;
-    border-radius: 14px;
-    padding: 10px;
-    gap: 12px;
-}
-
-.portada-dummy {
-    width: 40px;
-    height: 55px;
-    background-color: #cbd5e1;
-    border-radius: 6px;
-}
+/* Colores de las portadas simuladas */
+.portada-azul { background-color: #2b579a; }
+.portada-celeste { background-color: #53a7e0; }
+.portada-morada { background-color: #6f42c1; }
 
 .info-libro {
-    flex-grow: 1;
+  flex: 1;
 }
 
 .info-libro h4 {
-    margin: 0 0 4px 0;
-    font-size: 14px;
-    color: #2c3e50;
+  margin: 0 0 5px 0;
+  font-size: 15px;
+  color: #333;
 }
 
 .estrellas {
-    color: #f1c40f;
-    font-size: 12px;
+  color: #ffc107; /* Color dorado para estrellas */
+  font-size: 13px;
 }
 
-/* Etiquetas */
-.etiqueta {
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-weight: 600;
+/* Etiquetas de estado (Badges) */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
 }
 
-.etiqueta.leido {
-    background-color: #e8f8f0;
-    color: #2ecc71;
+.badge-leido {
+  background-color: #e2f4e3;
+  color: #2e7d32;
 }
 
-.etiqueta.por-leer {
-    background-color: #fef9e7;
-    color: #f1c40f;
+.badge-por-leer {
+  background-color: #ffe0b2;
+  color: #e65100;
 }
 
-/* Menú de Navegación Inferior Fijo */
-.nav-inferior {
+/* Barra de Navegación Inferior */
+.barra-navegacion {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 768px) {
+  .barra-navegacion {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    background-color: #ffffff;
-    border-top: 1px solid #e1e8ed;
-    /* Importante: Hereda exactamente el redondeado de 16px que tiene .tarjeta-pantalla en app.css */
-    border-radius: 0 0 16px 16px; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0 10px;
+    border-radius: 0 0 8px 8px;
+  }
+  .tarjeta-pantalla {
+    position: relative;
+    padding-bottom: 80px;
+  }
 }
 
 .nav-item {
-    background: none;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    color: #95a5a6;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #888;
+  text-decoration: none;
+  font-size: 11px;
+  gap: 4px;
+}
+
+.nav-item i {
+  font-size: 18px;
 }
 
 .nav-item.activo {
-    color: #5d24b3; /* Usando tu color morado unificado */
+  color: #5d24b3; /* Usando tu morado global */
 }
 
-.nav-icono {
-    font-size: 18px;
-}
-
-.nav-texto {
-    font-size: 10px;
-}
-
-/* Botón central redondo (+) */
-.btn-mas {
-    background-color: #ffffff;
-    border: 1px solid #e1e8ed;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
-    transform: translateY(-5px);
-}
-
-.nav-icono-mas {
-    font-size: 22px;
-    color: #2c3e50;
-    font-weight: 300;
+/* Botón Más (+) del centro */
+.nav-item.btn-mas i {
+  font-size: 32px;
+  color: #5d24b3;
 }

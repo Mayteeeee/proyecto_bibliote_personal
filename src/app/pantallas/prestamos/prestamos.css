@@ -1,10 +1,8 @@
-/* Heredamos tu comportamiento responsivo global */
 .tarjeta-pantalla {
-  padding-bottom: 90px !important; /* Espacio abajo para que el navbar flotante no tape los libros */
+  padding-bottom: 90px !important; 
   position: relative;
 }
 
-/* Título de la pantalla */
 .titulo-seccion {
   font-size: 26px;
   font-weight: 700;
@@ -13,7 +11,6 @@
   margin: 10px 0 24px 0;
 }
 
-/* Tabs (Activos / Historial) */
 .contenedor-tabs {
   display: flex;
   gap: 16px;
@@ -35,12 +32,11 @@
 }
 
 .tab-btn.activo {
-  background-color: #5d24b3; /* Tu morado/lila del CSS global */
+  background-color: #5d24b3; 
   color: #ffffff;
   border-color: #5d24b3;
 }
 
-/* Lista contenedora de libros */
 .lista-libros {
   display: flex;
   flex-direction: column;
@@ -69,7 +65,6 @@
   border-bottom: none;
 }
 
-/* Carátulas de libros */
 .caratula-libro {
   width: 50px;
   height: 70px;
@@ -80,7 +75,6 @@
 .portada-morada { background-color: #9C27B0; }
 .portada-azul { background-color: #2196F3; }
 
-/* Textos de la info */
 .info-libro {
   display: flex;
   flex-direction: column;
@@ -111,7 +105,6 @@
   margin: 0;
 }
 
-/* Etiquetas dinámicas de estado */
 .etiqueta-estado {
   position: absolute;
   top: 4px;
@@ -132,25 +125,7 @@
   color: #059669;
 }
 
-/* Botón Flotante (+) adaptivo */
-.btn-flotante-agregar {
-  position: fixed;
-  bottom: 85px;
-  right: 24px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #333333;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 99;
-}
-
-/* Barra inferior fija */
+/* Barra inferior fija responsiva */
 .navbar-inferior {
   position: fixed;
   bottom: 0;
@@ -167,6 +142,14 @@
   z-index: 100;
 }
 
+/* Si estás en PC/Laptop simula el contenedor móvil perfectamente */
+@media (min-width: 768px) {
+  .navbar-inferior {
+    position: absolute;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
 .nav-item {
   background: none;
   border: none;
@@ -176,19 +159,19 @@
   gap: 4px;
   color: #999999;
   cursor: pointer;
-  flex: 1;
+  text-decoration: none;
 }
 
-.nav-item span {
+.nav-icono {
+  font-size: 18px;
+}
+
+.nav-texto {
   font-size: 11px;
   font-weight: 500;
 }
 
 .nav-item.activo {
-  color: #5d24b3; /* Combina con tu botón morado global */
-}
-
-.nav-item-central-vacio {
-  width: 45px;
-  flex-shrink: 0;
+  color: #5d24b3;
+  font-weight: bold;
 }

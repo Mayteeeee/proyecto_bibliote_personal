@@ -1,6 +1,5 @@
 <div class="mobile-container">
   <div class="header-navigation">
-    <!-- Si tienes una flechita de regresar en tu login, déjala así: -->
   <button class="btn-back" [routerLink]="['/']">&lsaquo; </button>
   </div>
 
@@ -11,7 +10,7 @@
 
     <h2>Iniciar sesión</h2>
 
-    <form class="login-form">
+    <form class="login-form" (ngSubmit)="iniciarSesion()">
       <div class="input-group">
         <span class="input-icon">👤</span>
         <input type="email" placeholder="Correo electrónico" required>

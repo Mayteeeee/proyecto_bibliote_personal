@@ -22,6 +22,6 @@ export class LoginComponent {
   iniciarSesion():void{
     console.log('Validando datos e ingressando...');
   
-    this.router.navigate(['/mislibros']);
+    this.router.navigate(['/panelprincipal']);
   }
 }
